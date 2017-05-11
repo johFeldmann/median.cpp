@@ -21,3 +21,14 @@ Output.bmp
 
 xor.pro.user
 build-xor*
+
+// Ignore created Files
+[Dd]ebug/
+[Rr]elease/
+
+// Ignore Visual Studio specific files
+*.suo
+*.db
+*.ipch
+*.vcxproj.filters
+*.vcxproj.user
