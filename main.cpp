@@ -29,6 +29,11 @@ int main(void)
 	
 	}
 
+	// Test image
+	unsigned changes = medianTest(IMAGE, OUT, WIDTH, HEIGHT);
+
+	cout << "Changes done: " << changes << endl;
+
 	// Save Image:
         BMP image;
         image.SetSize(WIDTH,HEIGHT);

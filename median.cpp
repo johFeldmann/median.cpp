@@ -13,6 +13,7 @@
 using std::multiset;
 
 #include <thread>
+#include "median.h"
 using std::thread;
 
 // Coordinate System:
@@ -229,5 +230,27 @@ void medianFilter(const unsigned char input[][HEIGHT], unsigned char output[][HE
 	// Wait for all threads
 	for (unsigned i = 0; i < height; i++)
 		t[i].join();
+}
+
+unsigned medianTest(const unsigned char input[][HEIGHT], unsigned char output[][HEIGHT], unsigned int width, unsigned int height)
+{
+	unsigned int Dif[256];
+	
+	// Set everything to zero
+	memset(Dif, 0, 256 * sizeof(unsigned int));
+
+	// Compare difference of input and output
+	for (unsigned i = 0; i < width*height; i++)
+	{
+		Dif[abs(input[0][i] - output[0][i])]++;
+	}
+
+	// Calculate all differences to one single number
+	unsigned result = 0;
+	for (unsigned i = 1; i < 256; i++)
+	{
+		result += i * Dif[i];
+	}
+	return result;
 }
 

@@ -13,5 +13,6 @@
 #include<image.h>
 
 void medianFilter(const unsigned char input[][HEIGHT], unsigned char output[][HEIGHT], unsigned int width, unsigned int height);
+unsigned medianTest(const unsigned char input[][HEIGHT], unsigned char output[][HEIGHT], unsigned int width, unsigned int height);
 
 #endif // MEDIAN_H
